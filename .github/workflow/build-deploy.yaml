@@ -12,8 +12,13 @@
 name: "Build, Publish and Deploy"
 
 on:
-  workflow_dispatch:
-
+  push:
+    branches:
+    - main
+    paths-ignore:
+    - '**/*.md'
+    - '**/*.gitignore'
+    - '**/*.gitattributes'
 
 env:
   AZURE_WEBAPP_NAME: 'sales-api' # set this to your application's name
