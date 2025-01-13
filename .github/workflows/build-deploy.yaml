@@ -53,7 +53,7 @@ jobs:
       run: dotnet test --no-build
 
     - name: Publish app for deploy
-      run: dotnet publish --configuration Release -r win-x64 --output ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+      run: dotnet publish --configuration Release -r win-x64 --self-contained --output ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
     - name: Publish Artifacts
       uses: actions/upload-artifact@v4
