@@ -40,6 +40,9 @@ jobs:
     - name: Disable Globalization
       run: echo "DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1" >> $GITHUB_ENV
 
+    - name: Clean packages
+      run: dotnet clean
+
     - name: Restore packages
       run: dotnet restore
 
@@ -50,7 +53,7 @@ jobs:
       run: dotnet test --no-build
 
     - name: Publish app for deploy
-      run: dotnet publish --configuration Release -r win-x64 --self-contained --no-build --output ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+      run: dotnet publish --configuration Release -r win-x64 --output ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
     - name: Publish Artifacts
       uses: actions/upload-artifact@v4
