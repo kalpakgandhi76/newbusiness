@@ -14,10 +14,11 @@ public class StatusController : ControllerBase
         _logger = logger;   
     }
 
+
     [HttpGet()]
     public ActionResult<string> Get()
     {
        _logger.LogInformation("API Status Get Called");
-       return "Api running successfully..";
+       return "Status Api running successfully..";
     }
 }
