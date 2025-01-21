@@ -92,4 +92,4 @@ jobs:
     - name: Validate Dev Deployment
       id: validate-dev
       run: |
-        curl -s --head --request GET https://${{ env.AZURE_WEBAPP_NAME }}.azurewebsites.net/ || exit 1
+        curl -s --head --request GET https://${{ env.AZURE_WEBAPP_NAME }}.azurewebsites.net/api/status || exit 1
