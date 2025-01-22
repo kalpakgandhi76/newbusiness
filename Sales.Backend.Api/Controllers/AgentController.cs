@@ -17,7 +17,7 @@ public class AgentController : ControllerBase
     {
        _logger.LogInformation("Quote Action called");
        var quote = CreateQuote();
-       _logger.LogInformation(message: "Quote Object ::", quote);
+       _logger.LogInformation("Quote Object :: {Quote}", quote);
        return quote;
     }
 
