@@ -15,7 +15,7 @@ public class AgentController : ControllerBase
     [HttpGet()]
     public ActionResult<Quote> Quote()
     {
-       _logger.LogInformation("Quote Action is being called");
+       _logger.LogInformation("Quote Action is being called...");
        var quote = CreateQuote();
        _logger.LogInformation("Quote Object :: {Quote}", quote);
        return quote;
