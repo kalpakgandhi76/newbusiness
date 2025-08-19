@@ -37,5 +37,5 @@ jobs:
               },
               \"status\": \"SUCCESSFUL\",
               \"url\": \"https://bitbucket.example.com/browse/GWCP-0000\",
-              \"comment\": \"Verification Passed.\"
+              \"comment\": \"Verification Passed after 1.40 PM.\"
             }"
