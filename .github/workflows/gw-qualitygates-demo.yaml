@@ -6,8 +6,7 @@ on:
       commit_id:
         description: "Commit ID to send to CICD Manager"
         required: true
-        default: "eda36be13d2d54544f51a061d8c8b8203c59449e"
-        type: string
+        default: "eda36be13d2d54544f51a061d8c8b8203c59449e"   
 
 jobs:
   run-manually:
