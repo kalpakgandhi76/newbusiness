@@ -1,4 +1,4 @@
-name: Manual Workflow
+name: Quality Gate Workflow
 
 on:
   workflow_dispatch:  # This allows the workflow to be triggered manually
