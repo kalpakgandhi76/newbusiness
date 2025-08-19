@@ -2,6 +2,12 @@ name: Quality Gate Workflow
 
 on:
   workflow_dispatch:  # This allows the workflow to be triggered manually
+    inputs:
+      commit_id:
+        description: "Commit ID to send to CICD Manager"
+        required: true
+        default: "eda36be13d2d54544f51a061d8c8b8203c59449e"
+        type: string
 
 jobs:
   run-manually:
@@ -17,4 +23,19 @@ jobs:
 
       - name: Run a script
         run: |
-          echo "All Test Cases passed successfully."
+          echo "All Test Cases passed successfully."     
+     
+      - name: Call CICD Manager Quality Gate API
+        run: |
+          curl -X POST "https://cicd-manager-service.api.omega2-andromeda.guidewire.net/api/v3/tenants/valuemom/starsystems/gwcp/applications/cc/quality-gates/qualitygate_poc/verifications" \
+            -H "Authorization: Bearer ${{ secrets.CICD_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"artifact\": {
+                \"type\": \"COMMIT\",
+                \"id\": \"${{ github.event.inputs.commit_id }}\"
+              },
+              \"status\": \"SUCCESSFUL\",
+              \"url\": \"https://bitbucket.example.com/browse/GWCP-0000\",
+              \"comment\": \"Verification Passed.\"
+            }"
