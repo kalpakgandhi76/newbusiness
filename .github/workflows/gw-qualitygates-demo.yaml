@@ -18,7 +18,7 @@ jobs:
         run: echo "This workflow was triggered from GuideWire quality Gates!"
 
       - name: Show commitId input
-        run: echo "CommitId input was:${{ github.event.inputs.commit_Id }}"
+        run: echo "CommitId input was ${{ github.event.inputs.commit_id }}"
 
       - name: Run a script
         run: |
