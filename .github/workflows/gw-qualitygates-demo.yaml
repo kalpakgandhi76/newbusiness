@@ -21,6 +21,9 @@ jobs:
         run: |
           echo "Running GuideWire Test cases."
 
+      - name: Wait for 90 seconds
+        run: sleep 90
+
       - name: Run a script
         run: |
           echo "All Test Cases passed successfully."     
@@ -37,5 +40,5 @@ jobs:
               },
               \"status\": \"SUCCESSFUL\",
               \"url\": \"https://bitbucket.example.com/browse/GWCP-0000\",
-              \"comment\": \"Verification Passed after 1.40 PM.\"
+              \"comment\": \"Verification Passed from GitHub Actions\"
             }"
