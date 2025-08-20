@@ -32,7 +32,7 @@ jobs:
      
       - name: Call CICD Manager Quality Gate API
         run: |
-          curl -X POST "https://cicd-manager-service.api.omega2-andromeda.guidewire.net/api/v3/tenants/valuemom/starsystems/gwcp/applications/cc/quality-gates/qualitygateswebhooktest/verifications" \
+          curl -X POST "https://cicd-manager-service.api.omega2-andromeda.guidewire.net/api/v3/tenants/valuemom/starsystems/gwcp/applications/cc/quality-gates/qulitygatedemopoc/verifications" \
             -H "Authorization: Bearer ${{ secrets.CICD_TOKEN }}" \
             -H "Content-Type: application/json" \
             -d "{
