@@ -9,7 +9,7 @@ on:
         default: "eda36be13d2d54544f51a061d8c8b8203c59449e"   
 
 jobs:
-  run-manually:
+  QualityGate-GitActionWorkflow:
     runs-on: ubuntu-latest
 
     steps:
