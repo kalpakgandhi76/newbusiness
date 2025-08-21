@@ -6,7 +6,7 @@ on:
       commit_id:
         description: "Commit ID to send to CICD Manager"
         required: true
-        default: "eda36be13d2d54544f51a061d8c8b8203c59449e"   
+        default: "dda45ff7f50d6ab424dc67d0b45905df16860edb"   
 
 jobs:
   QualityGate-GitActionWorkflow:
