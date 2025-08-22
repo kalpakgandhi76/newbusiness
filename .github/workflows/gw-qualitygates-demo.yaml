@@ -34,7 +34,7 @@ jobs:
         run: |
           set -e
           response=$(curl -s -o response.json -w "%{http_code}" \
-            -X POST "https://cicd-manager-service.api.omega2-andromeda.guidewire.net/api/v3/tenants/valuemom/starsystems/gwcp/applications/cc/quality-gates/usaaqualitygatedemo/verifications" \
+            -X POST "https://cicd-manager-service.api.omega2-andromeda.guidewire.net/api/v3/tenants/valuemom/starsystems/gwcp/applications/cm/quality-gates/usaaqualitygatedemo/verifications" \
             -H "Authorization: Bearer ${{ secrets.CICD_TOKEN }}" \
             -H "Content-Type: application/json" \
             -d "{
