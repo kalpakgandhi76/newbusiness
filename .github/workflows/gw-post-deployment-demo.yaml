@@ -29,29 +29,6 @@ jobs:
 
       - name: Run a script
         run: |
-          echo "All Test Cases passed successfully."     
+          echo "All Test Cases passed successfully."    
      
-      - name: Call CICD Manager Quality Gate API
-        run: |
-          set -e
-          response=$(curl -s -o response.json -w "%{http_code}" \
-            -X POST "https://cicd-manager-service.api.omega2-andromeda.guidewire.net/api/v3/tenants/valuemom/starsystems/gwcp/applications/cm/quality-gates/usaaqualitygatedemo/verifications" \
-            -H "Authorization: Bearer ${{ secrets.CICD_TOKEN }}" \
-            -H "Content-Type: application/json" \
-            -d "{
-              \"artifact\": {
-                \"type\": \"BUILD\",
-                \"id\": \"${{ github.event.inputs.build_id }}\"
-              },
-              \"status\": \"SUCCESSFUL\",
-              \"url\": \"https://bitbucket.example.com/browse/GWCP-0000\",
-              \"comment\": \"Verification Passed from GitHub Actions\"
-            }")
-
-          echo "HTTP response code: $response"
-          cat response.json
-
-          if [ "$response" -lt 200 ] || [ "$response" -ge 300 ]; then
-            echo "❌ CICD Manager API call failed"
-            exit 1
-          fi
+      
