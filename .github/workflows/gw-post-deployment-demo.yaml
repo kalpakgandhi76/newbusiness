@@ -1,5 +1,5 @@
 
-name: Quality Gate Build Promote Workflow
+name: Post Deployment Workflow
 
 on:
   workflow_dispatch:  # This allows the workflow to be triggered manually
