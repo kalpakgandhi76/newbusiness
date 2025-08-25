@@ -10,7 +10,7 @@ on:
         default: "cm/10/10"   
 
 jobs:
-  QualityGate-BuildPromotion-GitActionWorkflow:
+  Post-Deployment-GitActionWorkflow:
     runs-on: ubuntu-latest
 
     steps:
